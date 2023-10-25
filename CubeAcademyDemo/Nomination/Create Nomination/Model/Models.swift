@@ -25,7 +25,7 @@ struct NomineeModel: Decodable {
     let data: [NomineeData]
 }
 
-extension NomineeModel {
+//extension NomineeModel {
     struct NomineeData: Decodable {
         let nomineeID, firstName, lastName: String
         
@@ -35,4 +35,4 @@ extension NomineeModel {
             case lastName = "last_name"
         }
     }
-}
+//}
