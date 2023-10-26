@@ -8,7 +8,8 @@ enum HTTPType: String {
 
 // Enum for API Type
 enum APIType: String {
-    case fetch = "Fetch"
+    case fetchNominee = "FetchNominee"
+    case fetchNomination = "FetchNomination"
     case submit = "Submit"
 }
 

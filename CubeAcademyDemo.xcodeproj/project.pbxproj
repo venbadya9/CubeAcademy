@@ -31,7 +31,6 @@
 		3075B2102AE49D49001E59A3 /* CreateNominationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3075B20F2AE49D49001E59A3 /* CreateNominationVC.swift */; };
 		3075B2132AE50537001E59A3 /* PickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3075B2122AE50537001E59A3 /* PickerView.swift */; };
 		3075B21A2AE55BBC001E59A3 /* CreateNominationVC+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3075B2192AE55BBC001E59A3 /* CreateNominationVC+Extensions.swift */; };
-		3093DC192AE9CAA700A01833 /* Nominee.json in Resources */ = {isa = PBXBuildFile; fileRef = 3093DC182AE9CAA700A01833 /* Nominee.json */; };
 		30F119082AE5C899006D340B /* NominationSubmissionVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F119072AE5C899006D340B /* NominationSubmissionVC.swift */; };
 		30F119102AE72B32006D340B /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F1190E2AE72B32006D340B /* NetworkManager.swift */; };
 		30F119112AE72B32006D340B /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 30F1190F2AE72B32006D340B /* NetworkError.swift */; };
@@ -82,7 +81,6 @@
 		3075B20F2AE49D49001E59A3 /* CreateNominationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateNominationVC.swift; sourceTree = "<group>"; };
 		3075B2122AE50537001E59A3 /* PickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerView.swift; sourceTree = "<group>"; };
 		3075B2192AE55BBC001E59A3 /* CreateNominationVC+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateNominationVC+Extensions.swift"; sourceTree = "<group>"; };
-		3093DC182AE9CAA700A01833 /* Nominee.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Nominee.json; sourceTree = "<group>"; };
 		30F119072AE5C899006D340B /* NominationSubmissionVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NominationSubmissionVC.swift; sourceTree = "<group>"; };
 		30F1190E2AE72B32006D340B /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		30F1190F2AE72B32006D340B /* NetworkError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
@@ -169,7 +167,6 @@
 				3075B1C52AE4151E001E59A3 /* Assets.xcassets */,
 				3075B1DC2AE417FC001E59A3 /* Fonts */,
 				3075B1F92AE41A3D001E59A3 /* Styling */,
-				3093DC182AE9CAA700A01833 /* Nominee.json */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -459,7 +456,6 @@
 				3075B1EE2AE417FC001E59A3 /* Poppins-Light.ttf in Resources */,
 				3075B1C92AE4151E001E59A3 /* LaunchScreen.storyboard in Resources */,
 				3075B20A2AE45FF9001E59A3 /* NavigationView.xib in Resources */,
-				3093DC192AE9CAA700A01833 /* Nominee.json in Resources */,
 				3075B1F22AE417FC001E59A3 /* Poppins-SemiBold.ttf in Resources */,
 				3075B1EC2AE417FC001E59A3 /* AnonymousPro-Bold.ttf in Resources */,
 				3075B1F02AE417FC001E59A3 /* Poppins-Regular.ttf in Resources */,

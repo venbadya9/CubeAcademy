@@ -55,23 +55,13 @@ extension CreateNominationVC: CallbackStatus {
     // Success Handling
     func handleSuccess(_ type: APIType) {
         
-        if type == APIType.fetch {
-            // Configuring textfield to select values from Picker.
-            var salutations = [String]()
-            viewModel?.nomineeModel?.data.forEach({ details in
-                let name = details.firstName + " " + details.lastName
-                salutations.append(name)
-            })
-            self.loadDropdownData(data: salutations)
-        } else {
-            // Navigating to Nomination Submitted Screen.
-            DispatchQueue.main.async {
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                guard let nominationSubmissionVC = storyboard.instantiateViewController(withIdentifier: "NominationSubmissionVC") as? NominationSubmissionVC else {
-                    fatalError()
-                }
-                self.navigationController?.pushViewController(nominationSubmissionVC, animated: false)
+        // Navigating to Nomination Submitted Screen.
+        DispatchQueue.main.async {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            guard let nominationSubmissionVC = storyboard.instantiateViewController(withIdentifier: "NominationSubmissionVC") as? NominationSubmissionVC else {
+                fatalError()
             }
+            self.navigationController?.pushViewController(nominationSubmissionVC, animated: false)
         }
     }
     
@@ -90,7 +80,6 @@ extension CreateNominationVC {
     
     func generateSubmissionViewModel() -> SubmissionDataViewModel {
         let viewModel = SubmissionViewModel(useCase: generateSubmissionUseCase())
-        viewModel.fetchNomineeDetails()
         return viewModel
     }
     
@@ -104,7 +93,7 @@ extension CreateNominationVC {
 // Picker Protocol Implementation
 extension CreateNominationVC: PickerDelegate {
     func selectedIndex(index: Int) {
-        selectedUUID =  viewModel?.nomineeModel?.data[index].nomineeID ?? ""
+        selectedUUID =  GlobalManager.sharedInstance.nomineeDetails[index].nomineeID 
     }
 }
 

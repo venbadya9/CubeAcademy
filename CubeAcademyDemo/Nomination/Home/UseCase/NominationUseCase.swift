@@ -15,4 +15,8 @@ class NominationUseCase: NominationUseCaseModel {
     func fetchNominations(completion: @escaping NominationResponse) {
         return self.networkManager.request(requestType: HTTPType.get.rawValue, fromUrl: NominationAPIEndpoints.submitNominationEndpoint, json: [:], completion: completion)
     }
+    
+    func fetchNomineeDetails(completion: @escaping NomineeResponse) {
+        return self.networkManager.request(requestType: HTTPType.get.rawValue, fromUrl: NominationAPIEndpoints.getNomineeEndpoint, json: [:], completion: completion)
+    }
 }

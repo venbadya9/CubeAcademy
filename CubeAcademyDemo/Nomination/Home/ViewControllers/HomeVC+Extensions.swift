@@ -41,6 +41,7 @@ extension HomeVC {
     
     func generateNominationViewModel() -> NominationDataViewModel {
         let viewModel = NominationViewModel(useCase: generateNominationUseCase())
+        viewModel.fetchNomineeDetails()
         return viewModel
     }
     
@@ -55,8 +56,18 @@ extension HomeVC {
 extension HomeVC: CallbackStatus {
     
     func handleSuccess(_ type: APIType) {
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
+        if type == APIType.fetchNominee {
+            // Configuring textfield to select values from Picker.
+            GlobalManager.sharedInstance.nomineeDetails = viewModel?.nomineeModel?.data ?? []
+            viewModel?.nomineeModel?.data.forEach({ details in
+                let name = details.firstName + " " + details.lastName
+                GlobalManager.sharedInstance.salutation.append(name)
+            })
+            
+        } else {
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.tableView.reloadData()
+            }
         }
     }
     

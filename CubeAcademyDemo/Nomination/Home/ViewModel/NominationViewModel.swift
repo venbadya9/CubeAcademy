@@ -7,6 +7,7 @@ class NominationViewModel: NominationDataViewModel {
     var output: CallbackStatus?
     var nominations: [NominationCellViewModel]? = [NominationCellViewModel]()
     var nominationModel: NominationModel?
+    var nomineeModel: NomineeModel?
     
     // MARK: Private Variables
     
@@ -20,6 +21,19 @@ class NominationViewModel: NominationDataViewModel {
     
     // MARK: Protocol Functions
     
+    
+    func fetchNomineeDetails() {
+        self.useCase.fetchNomineeDetails { [weak self] result in
+            switch result {
+            case let .success(nomineeList):
+                self?.nomineeModel = nomineeList
+                self?.output?.handleSuccess(APIType.fetchNominee)
+            case let .failure(error):
+                self?.output?.handleFailure(error.localizedDescription)
+            }
+        }
+    }
+    
     func fetchDetails() {
         self.useCase.fetchNominations { [weak self] result in
             switch result {
@@ -27,7 +41,7 @@ class NominationViewModel: NominationDataViewModel {
                 self?.nominationModel = nominationList
                 let nominations = nominationList.data
                 self?.nominations = self?.processFetchedNominations(nominations) ?? []
-                self?.output?.handleSuccess(APIType.fetch)
+                self?.output?.handleSuccess(APIType.fetchNomination)
             case let .failure(error):
                 self?.output?.handleFailure(error.localizedDescription)
             }

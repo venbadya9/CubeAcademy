@@ -10,13 +10,12 @@ class NominationTableViewCell: UITableViewCell {
     
     // MARK: Variables
     
-    var details: NomineeModel?
     
     // Using UserCellViewModel for configuring cell
     var nominationCellModel : NominationCellViewModel? {
         didSet {
-            if let index = details?.data.firstIndex(where: {$0.nomineeID == nominationCellModel?.nomineeID}) {
-                nominationName.text = details?.data[index].firstName ?? "" + " " + (details?.data[index].lastName ?? "")
+            if let index = GlobalManager.sharedInstance.nomineeDetails.firstIndex(where: {$0.nomineeID == nominationCellModel?.nomineeID}) {
+                nominationName.text = GlobalManager.sharedInstance.nomineeDetails[index].firstName + " " + (GlobalManager.sharedInstance.nomineeDetails[index].lastName)
                 reason.text = nominationCellModel?.reason
             }
         }
@@ -24,18 +23,5 @@ class NominationTableViewCell: UITableViewCell {
     
     // MARK: Object Lifecycle
     
-    override func awakeFromNib() {
-        getNomineeDetails()
-    }
-    
-    //MARK: Methods
-    
-    func getNomineeDetails() {
-        let jsonData = readLocalJSONFile(forName: "Nominee")
-        if let data = jsonData {
-            if let nomineeDetails = parse(jsonData: data) {
-                details = nomineeDetails
-            }
-        }
-    }
+    override func awakeFromNib() {}
 }

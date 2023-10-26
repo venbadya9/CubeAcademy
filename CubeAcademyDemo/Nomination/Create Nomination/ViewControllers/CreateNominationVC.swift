@@ -114,6 +114,8 @@ class CreateNominationVC: UIViewController {
         // Generating viewmodel and setting up callback
         viewModel = generateSubmissionViewModel()
         viewModel?.output = self
+        
+        self.loadDropdownData(data: GlobalManager.sharedInstance.salutation)
     }
     
     // Removing previously checked radio button.
